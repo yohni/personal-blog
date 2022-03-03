@@ -1,12 +1,12 @@
-import Head from "next/head";
-import Image from "next/image";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import Splash from "../components/Splash";
 
 export default function Home({ projects }) {
   return (
     <div>
+      <Splash />
       {projects.map((item, key) => (
         <div key={key}>{item.frontMatter.title}</div>
       ))}
