@@ -2,7 +2,8 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Splash from "../components/Splash";
-import { Box, Container, Heading, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, Image, VStack } from "@chakra-ui/react";
+import ProjectCard from "../components/ProjectCard";
 
 export default function Home({ projects }) {
   return (
@@ -14,9 +15,12 @@ export default function Home({ projects }) {
         </Heading>
         <VStack align="stretch" mt={4}>
           {projects.map((item, key) => (
-            <Box background="gray.800" key={key}>
-              {item.frontMatter.title}
-            </Box>
+            <ProjectCard
+              key={key}
+              title={item.frontMatter.title}
+              desc={item.frontMatter.description}
+              src={item.frontMatter.thumbnailUrl}
+            />
           ))}
         </VStack>
       </Container>
