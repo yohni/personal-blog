@@ -10,11 +10,9 @@ import {
   MenuList,
 } from "@chakra-ui/react";
 import {
-  AddIcon,
-  EditIcon,
+  DownloadIcon,
   ExternalLinkIcon,
   HamburgerIcon,
-  RepeatIcon,
 } from "@chakra-ui/icons";
 
 const Navbar = () => {
@@ -22,7 +20,7 @@ const Navbar = () => {
     <nav>
       <Container maxW={["sm", "container.lg"]}>
         <Flex py={2} justifyContent="space-between" alignItems="center">
-          <Image boxSize={8} src="https://via.placeholder.com/100" alt="" />
+          <Image boxSize={8} src="/blog.svg" alt="" />
           <Menu>
             <MenuButton
               as={IconButton}
@@ -32,17 +30,17 @@ const Navbar = () => {
               border="0"
             />
             <MenuList>
-              <MenuItem icon={<AddIcon />} command="⌘T">
-                New Tab
+              <MenuItem>
+                About
               </MenuItem>
-              <MenuItem icon={<ExternalLinkIcon />} command="⌘N">
-                New Window
+              <MenuItem>
+                Projects
               </MenuItem>
-              <MenuItem icon={<RepeatIcon />} command="⌘⇧N">
-                Open Closed Tab
+              <MenuItem>
+                Contact
               </MenuItem>
-              <MenuItem icon={<EditIcon />} command="⌘O">
-                Open File...
+              <MenuItem icon={<DownloadIcon />}>
+                Resume
               </MenuItem>
             </MenuList>
           </Menu>
