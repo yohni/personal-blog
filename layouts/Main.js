@@ -1,14 +1,17 @@
+import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 const MainLayout = ({ children }) => {
   return (
-    <>
+    <Flex direction="column">
       <Navbar />
-      <div>
+      <Box mb={20}>
         <>{children}</>
-      </div>
-    </>
+      </Box>
+      <Footer />
+    </Flex>
   );
 };
 

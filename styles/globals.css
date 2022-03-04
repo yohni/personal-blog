@@ -1,8 +1,6 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Be Vietnam Pro", sans-serif;
+  min-height: 100vh !important;
 }
 
 a {

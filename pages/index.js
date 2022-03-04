@@ -20,6 +20,9 @@ export default function Home({ projects }) {
               title={item.frontMatter.title}
               desc={item.frontMatter.description}
               src={item.frontMatter.thumbnailUrl}
+              slug={item.slug}
+              date={item.frontMatter.date}
+              number={key}
             />
           ))}
         </VStack>

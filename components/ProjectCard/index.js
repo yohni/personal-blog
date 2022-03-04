@@ -1,23 +1,38 @@
-import { Heading, Image, Stack, Text } from "@chakra-ui/react";
+import { Heading, Image, Link, Stack, Text } from "@chakra-ui/react";
+import NextLink from "next/link";
 import React from "react";
 
-function ProjectCard({ src, title, desc, time }) {
+function ProjectCard({ src, title, desc, date, slug, number }) {
   return (
-    <Stack direction={["column", "row"]}>
-      <div>
-        <Heading>{title}</Heading>
-        <Text mb={2}>{desc}</Text>
-      </div>
-      <Image
-        maxH={[320, "auto"]}
-        maxW={["auto", "45%"]}
-        w="100%"
-        objectFit="cover"
-        objectPosition="top"
-        src={src}
-        alt={title}
-      />
-    </Stack>
+    <NextLink href={slug ? `/projects/${slug}` : "/"} passHref>
+      <Stack
+        direction={["column", number % 2 == 0 ? "row" : "row-reverse"]}
+        py="8"
+        spacing={[2, 8]}
+        justifyContent={["center", "space-between"]}
+      >
+        <div>
+          <Heading>
+            <Link>{title}</Link>
+          </Heading>
+          <Text color="gray.400" my={2}>
+            {date}
+          </Text>
+          <Text color="gray.600" mb={2}>
+            {desc}
+          </Text>
+        </div>
+        <Image
+          maxH={[320, "auto"]}
+          maxW={["auto", "50%"]}
+          w="100%"
+          objectFit="cover"
+          objectPosition="top"
+          src={src}
+          alt={title}
+        />
+      </Stack>
+    </NextLink>
   );
 }
 

@@ -4,6 +4,7 @@ import Head from "next/head";
 import { ChakraProvider } from "@chakra-ui/react";
 import MainLayout from "../layouts/Main";
 import theme from "../theme";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -11,13 +12,11 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <title>Mindy Blog</title>
       </Head>
-      <main>
-        <ChakraProvider theme={theme}>
-          <MainLayout>
-            <Component {...pageProps} />
-          </MainLayout>
-        </ChakraProvider>
-      </main>
+      <ChakraProvider theme={theme}>
+        <MainLayout>
+          <Component {...pageProps} />
+        </MainLayout>
+      </ChakraProvider>
     </>
   );
 }
