@@ -10,7 +10,19 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        <title>yohnifinan blog</title>
+        <title>Yohni Finan | Frontend Developer</title>
+        <meta
+          property="og:title"
+          content="Blog - Yohni Finan | Frontend Developer"
+        />
+        <meta property="og:url" content="https://yohnifinan.com" />
+        <meta property="og:image" content="/opengraph.png" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:description"
+          content="Personal website that full of love and passion for programming"
+        />
+        <meta property="og:locale" content="en_GB" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
