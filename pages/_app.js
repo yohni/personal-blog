@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }) {
           content="Blog - Yohni Finan | Frontend Developer"
         />
         <meta property="og:url" content="https://yohnifinan.com" />
-        <meta property="og:image" content="/opengraph.png" />
+        <meta property="og:image" content="/assets/opengraph.png" />
         <meta property="og:type" content="website" />
         <meta
           property="og:description"
