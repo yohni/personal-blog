@@ -23,17 +23,61 @@ const Navbar = () => {
     <nav>
       <Container maxW={["sm", "container.lg"]}>
         <Flex py={2} justifyContent="space-between" alignItems="center">
-          <Link href="/">
-            <Image boxSize={8} src="/blog.svg" alt="" />
+          <Link role="group" href="/">
+            <Image
+              _groupHover={{
+                boxShadow: "0px 2px 20.9392px rgba(186, 19, 88, 0.42)",
+              }}
+              borderRadius={5}
+              boxSize={8}
+              src="/blog.svg"
+              alt=""
+            />
           </Link>
           <Show breakpoint="(min-width: 641px)">
             <HStack spacing={5}>
-              <Link href="/about">About</Link>
-              <Link href="/projects">Projects</Link>
-              <Link href="/contact">Contact</Link>
-              <Link href="/dakdakj" isExternal>
+              <Link
+                _hover={{
+                  color: "transparent",
+                  bgGradient: "linear(to-r, brand.main, brand.dark)",
+                  bgClip: "text",
+                }}
+                href="/about"
+              >
+                About
+              </Link>
+              <Link
+                _hover={{
+                  color: "transparent",
+                  bgGradient: "linear(to-r, brand.main, brand.dark)",
+                  bgClip: "text",
+                }}
+                href="/projects"
+              >
+                Projects
+              </Link>
+              <Link
+                _hover={{
+                  color: "transparent",
+                  bgGradient: "linear(to-r, brand.main, brand.dark)",
+                  bgClip: "text",
+                }}
+                href="/contact"
+              >
+                Contact
+              </Link>
+              <Link
+                role="group"
+                _hover={{
+                  color: "transparent",
+                  bgGradient: "linear(to-r, brand.main, brand.dark)",
+                  bgClip: "text",
+                }}
+                href="/dakdakj"
+                isExternal
+              >
                 <Flex align="center">
-                  <DownloadIcon mr={2} />
+                  <DownloadIcon _groupHover={{ color: "brand.main" }} mr={2} />
                   Resume
                 </Flex>
               </Link>

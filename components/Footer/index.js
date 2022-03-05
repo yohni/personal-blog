@@ -24,14 +24,30 @@ function Footer() {
             <Link
               href="https://www.linkedin.com/in/achmad-yohni-wahyu-f-669107131/"
               isExternal
+              role="group"
             >
-              <Icon as={RiLinkedinLine} />
+              <Icon
+                _groupHover={{
+                  color: "brand.main",
+                }}
+                as={RiLinkedinLine}
+              />
             </Link>
-            <Link href="https://github.com/yohni" isExternal>
-              <Icon as={RiGithubLine} />
+            <Link role="group" href="https://github.com/yohni" isExternal>
+              <Icon
+                _groupHover={{
+                  color: "brand.main",
+                }}
+                as={RiGithubLine}
+              />
             </Link>
-            <Link href="mailto:yohni.123@gmail.com" isExternal>
-              <Icon as={RiMailLine} />
+            <Link role="group" href="mailto:yohni.123@gmail.com" isExternal>
+              <Icon
+                _groupHover={{
+                  color: "brand.main",
+                }}
+                as={RiMailLine}
+              />
             </Link>
           </HStack>
           <Text as="small" color="gray.400">
