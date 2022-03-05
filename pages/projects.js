@@ -28,6 +28,9 @@ function Projects({ projects = [] }) {
             slug={item.slug}
             date={item.frontMatter.date}
             number={key}
+            tags={item.frontMatter.tags}
+            githubUrl={item.frontMatter.githubUrl}
+            liveUrl={item.frontMatter.liveUrl}
           />
         ))}
       </VStack>

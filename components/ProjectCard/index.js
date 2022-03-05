@@ -16,7 +16,17 @@ import React from "react";
 import Dot from "../DotDivider";
 import ImagePreview from "../ImagePreview";
 
-function ProjectCard({ src, title, desc, date, slug, number, tags }) {
+function ProjectCard({
+  src,
+  title,
+  desc,
+  date,
+  slug,
+  number,
+  tags,
+  githubUrl,
+  liveUrl,
+}) {
   return (
     <Stack
       direction={["column", number % 2 == 0 ? "row" : "row-reverse"]}
@@ -43,22 +53,30 @@ function ProjectCard({ src, title, desc, date, slug, number, tags }) {
           <Text color="gray.400" my={2}>
             {date}
           </Text>
-          <Dot />
-          <Link>
-            <Tooltip placement="top-start" label="show in github">
-              <Text color="gray.500">
-                Github <ExternalLinkIcon mb={1} />
-              </Text>
-            </Tooltip>
-          </Link>
-          <Dot />
-          <Link>
-            <Tooltip placement="top-start" label="show in github">
-              <Text color="gray.500">
-                Live <ExternalLinkIcon mb={1} />
-              </Text>
-            </Tooltip>
-          </Link>
+          {githubUrl && (
+            <>
+              <Dot />
+              <Link href={githubUrl} isExternal>
+                <Tooltip placement="top-start" label="Show in github.">
+                  <Text color="gray.500">
+                    Github <ExternalLinkIcon mb={1} />
+                  </Text>
+                </Tooltip>
+              </Link>
+            </>
+          )}
+          {liveUrl && (
+            <>
+              <Dot />
+              <Link href={liveUrl} isExternal>
+                <Tooltip placement="top-start" label="Go to live.">
+                  <Text color="gray.500">
+                    Live <ExternalLinkIcon mb={1} />
+                  </Text>
+                </Tooltip>
+              </Link>
+            </>
+          )}
         </Flex>
         <Text color="gray.600" mb={2}>
           {desc}
