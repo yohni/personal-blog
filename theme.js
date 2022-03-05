@@ -5,6 +5,12 @@ const theme = extendTheme({
     heading: "'IBM Plex Serif', serif",
     body: "'Be Vietnam Pro', sans-serif",
   },
+  colors: {
+    brand: {
+      main: "#FF409A",
+      dark: "#C438EF",
+    },
+  },
 });
 
 export default theme;
