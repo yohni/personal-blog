@@ -82,9 +82,9 @@ function ProjectCard({
           {desc}
         </Text>
         {tags && (
-          <HStack>
+          <HStack py={2}>
             {tags.map((tag) => (
-              <Tag key={tag} variantColor="red" size="sm">
+              <Tag key={tag} size="sm">
                 {tag}
               </Tag>
             ))}

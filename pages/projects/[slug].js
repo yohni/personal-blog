@@ -64,7 +64,7 @@ const ProjectPage = ({
       {tags && (
         <HStack my={20}>
           {tags.map((tag) => (
-            <Tag key={tag} variantColor="red" size="sm">
+            <Tag key={tag} size="sm">
               {tag}
             </Tag>
           ))}
