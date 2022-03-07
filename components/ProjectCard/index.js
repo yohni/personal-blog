@@ -91,7 +91,12 @@ function ProjectCard({
           </HStack>
         )}
       </div>
-      <Box maxW={["auto", "50%"]} w="100%">
+      <Box
+        border="solid"
+        borderColor="blackAlpha.200"
+        maxW={["auto", "50%"]}
+        w="100%"
+      >
         <ImagePreview
           w="100%"
           maxH={[320, "auto"]}
