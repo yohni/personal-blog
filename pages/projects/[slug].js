@@ -25,13 +25,15 @@ const ProjectPage = ({
   frontMatter: { title, date, githubUrl, liveUrl, tags, description },
   mdxSource,
 }) => {
-  TagManager.dataLayer({
-    dataLayer: {
-      event: "pageview",
-      pagePath: `/projects/${title}`,
-      pageTitle: title,
-    },
-  });
+  React.useEffect(() => {
+    TagManager.dataLayer({
+      dataLayer: {
+        event: "pageview",
+        pagePath: `/projects/${title}`,
+        pageTitle: title,
+      },
+    });
+  }, [title]);
   return (
     <>
       <Head>

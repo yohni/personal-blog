@@ -3,13 +3,15 @@ import Head from "next/head";
 import React from "react";
 
 const About = () => {
-  TagManager.dataLayer({
-    dataLayer: {
-      event: "pageview",
-      pagePath: `/about`,
-      pageTitle: "About",
-    },
-  });
+  React.useEffect(() => {
+    TagManager.dataLayer({
+      dataLayer: {
+        event: "pageview",
+        pagePath: `/about`,
+        pageTitle: "About",
+      },
+    });
+  }, []);
   return (
     <>
       <Head>
