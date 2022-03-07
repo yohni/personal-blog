@@ -1,6 +1,8 @@
 import {
   Box,
   Button,
+  Center,
+  Icon,
   Image,
   Modal,
   ModalBody,
@@ -13,12 +15,28 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
+import { MdOutlineTouchApp } from "react-icons/md";
+import { keyframes } from "@emotion/react";
 
-function ImagePreview({ src, alt, ...rest }) {
+function ImagePreview({ src, alt, name, ...rest }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [showHint, setShowHint] = React.useState(true);
+  const upDown = keyframes`
+    from { transform: translateY(0px); }
+    to { transform: translateY(-50px); }
+  `;
+
+  React.useEffect(() => {
+    const hintTimeout = setTimeout(() => {
+      setShowHint(false);
+    }, 4000);
+
+    return () => clearTimeout(hintTimeout);
+  }, []);
   return (
     <>
       <Image
+        loading="lazy"
         cursor="pointer"
         onClick={() => onOpen()}
         src={src}
@@ -31,13 +49,39 @@ function ImagePreview({ src, alt, ...rest }) {
           backdropFilter="blur(10px) hue-rotate(90deg)"
         />
         <ModalContent>
-          <ModalHeader>Image Preview</ModalHeader>
+          <ModalHeader>{name || "Preview"}</ModalHeader>
           <ModalCloseButton />
           <ModalBody position="relative" overflowY="scroll" maxH="lg">
-            <Box>
+            <Box pos="relative">
               <Image src={src} alt={alt} />
             </Box>
           </ModalBody>
+          <Box
+            opacity={showHint ? 1 : 0}
+            zIndex={showHint ? 1 : -1}
+            transition="opacity 0.3s"
+            bg="blackAlpha.600"
+            pos="absolute"
+            top={16}
+            left={6}
+            right={6}
+            bottom={16}
+            display="flex"
+            flexDirection="column"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Center
+              display="flex"
+              flexDirection="column"
+              animation={`${upDown} 1s ease 2 forwards`}
+            >
+              <Icon color="white" as={MdOutlineTouchApp} />
+              <Text as="b" fontSize="md" color="white">
+                Scroll me
+              </Text>
+            </Center>
+          </Box>
           <ModalFooter>
             <Button
               _hover={{
