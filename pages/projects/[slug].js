@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/head";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from "next-mdx-remote";
 import fs from "fs";
@@ -20,57 +21,67 @@ import Dot from "../../components/DotDivider";
 import ImagePreview from "../../components/ImagePreview";
 
 const ProjectPage = ({
-  frontMatter: { title, date, githubUrl, liveUrl, tags },
+  frontMatter: { title, date, githubUrl, liveUrl, tags, description },
   mdxSource,
 }) => {
   return (
-    <Container maxW={["sm", "container.md"]} py={10}>
-      <Heading as="h1" mb={5}>
-        {title}
-      </Heading>
-      <Flex>
-        <Text color="gray.500" mb={5}>
-          {date}
-        </Text>
-        {githubUrl && (
-          <>
-            <Dot />
-            <Link href={githubUrl} isExternal>
-              <Tooltip placement="top-start" label="Show in github.">
-                <Text color="gray.500">
-                  Github <ExternalLinkIcon mb={1} />
-                </Text>
-              </Tooltip>
-            </Link>
-          </>
+    <>
+      <Head>
+        <title>{`${title} | Yohni Finan - Frontend Engineer`}</title>
+        <meta
+          name="og:title"
+          content={`${title} | Yohni Finan - Frontend Engineer`}
+        />
+        <meta name="og:description" content={description} />
+      </Head>
+      <Container maxW={["sm", "container.md"]} py={10}>
+        <Heading as="h1" mb={5}>
+          {title}
+        </Heading>
+        <Flex>
+          <Text color="gray.500" mb={5}>
+            {date}
+          </Text>
+          {githubUrl && (
+            <>
+              <Dot />
+              <Link href={githubUrl} isExternal>
+                <Tooltip placement="top-start" label="Show in github.">
+                  <Text color="gray.500">
+                    Github <ExternalLinkIcon mb={1} />
+                  </Text>
+                </Tooltip>
+              </Link>
+            </>
+          )}
+          {liveUrl && (
+            <>
+              <Dot />
+              <Link href={liveUrl} isExternal>
+                <Tooltip placement="top-start" label="Open live website.">
+                  <Text color="gray.500">
+                    Live <ExternalLinkIcon mb={1} />
+                  </Text>
+                </Tooltip>
+              </Link>
+            </>
+          )}
+        </Flex>
+        <MDXRemote
+          {...mdxSource}
+          components={{ SyntaxHighlighter, ImagePreview }}
+        />
+        {tags && (
+          <HStack my={20}>
+            {tags.map((tag) => (
+              <Tag key={tag} size="sm">
+                {tag}
+              </Tag>
+            ))}
+          </HStack>
         )}
-        {liveUrl && (
-          <>
-            <Dot />
-            <Link href={liveUrl} isExternal>
-              <Tooltip placement="top-start" label="Open live website.">
-                <Text color="gray.500">
-                  Live <ExternalLinkIcon mb={1} />
-                </Text>
-              </Tooltip>
-            </Link>
-          </>
-        )}
-      </Flex>
-      <MDXRemote
-        {...mdxSource}
-        components={{ SyntaxHighlighter, ImagePreview }}
-      />
-      {tags && (
-        <HStack my={20}>
-          {tags.map((tag) => (
-            <Tag key={tag} size="sm">
-              {tag}
-            </Tag>
-          ))}
-        </HStack>
-      )}
-    </Container>
+      </Container>
+    </>
   );
 };
 

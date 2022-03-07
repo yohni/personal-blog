@@ -99,6 +99,7 @@ function ProjectCard({
           objectPosition="top"
           src={src}
           alt={title}
+          name={`${title}-preview`}
         />
       </Box>
     </Stack>

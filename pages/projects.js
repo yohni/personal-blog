@@ -15,7 +15,15 @@ function Projects({ projects = [] }) {
       maxW={["sm", "container.lg"]}
       py={10}
     >
-      <Heading as="h1" mb={10}>
+      <Heading
+        bgGradient="linear(to-r, brand.main, brand.dark)"
+        color="transparent"
+        bgClip="text"
+        textShadow="0px 2px 30px rgba(186, 19, 88, 0.3)"
+        as="h2"
+        size="xl"
+        mb={8}
+      >
         Projects
       </Heading>
       <VStack align="stretch" mt={4}>

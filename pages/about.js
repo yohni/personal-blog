@@ -32,6 +32,16 @@ const About = () => {
         <Link href="https://earnaha.com">Aha Learn-to-Earn</Link>.
       </Text>
       <Text></Text>
+      <Text>
+        Is there any question?{" "}
+        <Link
+          _hover={{ color: "brand.main" }}
+          href="mailto:yohni.123@gmail.com"
+          isExternal
+        >
+          Lets talk
+        </Link>
+      </Text>
     </Container>
   );
 };
