@@ -18,10 +18,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>Yohni Finan | Frontend Developer</title>
-        <meta
-          property="og:title"
-          content="Blog - Yohni Finan | Frontend Developer"
-        />
+        <meta property="og:title" content="Yohni Finan | Frontend Developer" />
         <meta property="og:url" content="https://yohnifinan.com" />
         <meta property="og:image" content="/assets/opengraph.png" />
         <meta property="og:type" content="website" />

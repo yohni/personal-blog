@@ -19,11 +19,19 @@ import {
 import { ExternalLinkIcon } from "@chakra-ui/icons";
 import Dot from "../../components/DotDivider";
 import ImagePreview from "../../components/ImagePreview";
+import TagManager from "react-gtm-module";
 
 const ProjectPage = ({
   frontMatter: { title, date, githubUrl, liveUrl, tags, description },
   mdxSource,
 }) => {
+  TagManager.dataLayer({
+    dataLayer: {
+      event: "pageview",
+      pagePath: `/projects/${title}`,
+      pageTitle: title,
+    },
+  });
   return (
     <>
       <Head>
