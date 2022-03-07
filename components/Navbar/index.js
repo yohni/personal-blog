@@ -27,6 +27,7 @@ const Navbar = () => {
             <Image
               _groupHover={{
                 boxShadow: "0px 2px 20.9392px rgba(186, 19, 88, 0.42)",
+                transition: "all 0.2s ease-in-out",
               }}
               borderRadius={5}
               boxSize={8}
@@ -56,7 +57,7 @@ const Navbar = () => {
               >
                 Projects
               </Link>
-              <Link
+              {/* <Link
                 _hover={{
                   color: "transparent",
                   bgGradient: "linear(to-r, brand.main, brand.dark)",
@@ -65,7 +66,7 @@ const Navbar = () => {
                 href="/contact"
               >
                 Contact
-              </Link>
+              </Link> */}
               <Link
                 role="group"
                 _hover={{
@@ -73,7 +74,7 @@ const Navbar = () => {
                   bgGradient: "linear(to-r, brand.main, brand.dark)",
                   bgClip: "text",
                 }}
-                href="/dakdakj"
+                href="/yohni_resume.pdf"
                 isExternal
               >
                 <Flex align="center">
@@ -99,10 +100,10 @@ const Navbar = () => {
                 <Link href="/projects">
                   <MenuItem>Projects</MenuItem>
                 </Link>
-                <Link href="/contact">
+                {/* <Link href="/contact">
                   <MenuItem>Contact</MenuItem>
-                </Link>
-                <Link href="/daaada">
+                </Link> */}
+                <Link href="/yohni_resume.pdf" isExternal>
                   <MenuItem icon={<DownloadIcon />}>Resume</MenuItem>
                 </Link>
               </MenuList>
