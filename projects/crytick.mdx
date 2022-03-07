@@ -1,0 +1,43 @@
+---
+title: Crytick
+date: "January 2022"
+description: Updated crypto currencies chart every 2s based on Market Cap.
+thumbnailUrl: "/assets/crytick_desktop.png"
+githubUrl: "https://github.com/yohni/crypto-ticker"
+liveUrl: "https://crytick.yohnifinan.com/"
+tags: ["reactjs", "typescript", "tailwind", "daisyui"]
+---
+
+Crytick is a website that streams all crypto currencies prices every 2s.
+The main idea of the project is to show the users the charts of cryptocurrencies which always updated every 2s. The charts will updated and sorted by the market cap value which always change every 2s. This project was bootstrapped with Create React App. The styles was using daisyui that customed by tailwindcss.
+
+<br />
+
+<ImagePreview
+  objectPosition="top"
+  objectFit="cover"
+  src="/assets/crytick_desktop.png"
+  alt="Screenshot of the website"
+  caption="Screenshot of the website"
+  w="100%"
+  h="auto"
+  maxH="400px"
+  mb={10}
+  name="Crytick"
+/>
+
+The implemented API is using 2 Binance APIs: [GET_ALL_ASSET]('https://www.binance.com/bapi/asset/v2/public/asset/asset/get-all-asset') and [TICKER 24H]('https://api.binance.com/api/v3/ticker/24hr').
+
+<br />
+
+# **JS Quizz**
+
+----- Is it True or False?
+
+<SyntaxHighlighter language="javascript">
+  {`
+    const main = () => {
+      return console.log(30 > 20 > 10);
+    }
+  `}
+</SyntaxHighlighter>
