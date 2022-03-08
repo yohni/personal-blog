@@ -1,6 +1,7 @@
 import { Container, Heading, Image, Link, Text } from "@chakra-ui/react";
 import Head from "next/head";
 import React from "react";
+import TagManager from "react-gtm-module";
 
 const About = () => {
   React.useEffect(() => {
@@ -58,7 +59,8 @@ const About = () => {
         <Text>
           Is there any question?{" "}
           <Link
-            _hover={{ color: "brand.main" }}
+            _hover={{ color: "brand.dark" }}
+            color="brand.main"
             href="mailto:yohni.123@gmail.com"
             isExternal
           >

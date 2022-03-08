@@ -36,6 +36,8 @@ function ImagePreview({ src, alt, name, ...rest }) {
   return (
     <>
       <Image
+        border="solid"
+        borderColor="blackAlpha.200"
         loading="lazy"
         cursor="pointer"
         onClick={() => onOpen()}
